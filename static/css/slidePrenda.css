@@ -1,0 +1,172 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* *****************
+*Estilos de la tarjeta
+*************************/
+
+.slide-card{
+    width: 10rem;
+    min-height: 15rem;
+    background-color: #EAECEE;
+    border-radius: 10px;
+    box-shadow: 3px 5px 5px rgba(0,0,0,0.5);
+    text-align: center;
+    margin: 5px;
+}
+
+.slide-image-box{
+    width: 100%;
+    height: 12rem;
+    overflow: hidden;
+}
+
+.slide-image-box img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 10px 0px 10px;
+}
+
+.info-box{
+    text-align: left;
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+}
+
+.info-box p{
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+.slide-card-price{
+    font-family: sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.slide-card-title{
+    font-family: elegante;
+    font-size: 15px;
+}
+
+.new-label{
+    position: absolute;
+    font-family: elegante;
+    font-size: 10px;
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    border-radius: 50px;
+    text-align: center;
+    background-color: #addad7;
+    top: -35px;
+    right: 2px;
+}
+
+/* ************************
+* estilos de Slide
+************************************************ */
+
+.slide-container-master{
+    /* background-color: #addad7; */
+    padding: 10px;
+}
+
+.slide-titleIndicators{
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: -20px;
+}
+
+.slide-titleIndicators .indicadores button {
+    color: #fff;
+    background-color: #fff;
+    height: 3px;
+    width: 10px;
+    cursor: pointer;
+    border: none;
+    margin-right: 2px;
+}
+
+.slide-titleIndicators .indicadores button:hover,
+.slide-titleIndicators .indicadores button.ind-active{
+    background-color: #f5caaa;
+}  
+
+
+.slide-titleIndicators h3{
+    font-family: elegante;
+    color: rgba(0,0,0,0.5);
+    font-size: 45px;
+}
+
+
+/**Slide body***/
+
+.slide-container-g{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.flecha-izquierda, .flecha-derecha{
+    position: absolute;
+    border: none;
+    background-color: rgba(0,0,0,0.5);
+    font-size:40px ;
+    height: 50px;
+    top:calc(50%-25%);
+    line-height: 40px;
+    width: 50px;
+    border-radius: 50px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 99;
+    transition: .2s ease all;
+}
+
+.flecha-izquierda{
+    left: 0px;
+}
+
+.flecha-derecha{
+    right: 0px;
+}
+
+/* Evento Flechas******************************* */
+.flecha-izquierda:hover, .flecha-derecha:hover{
+    background-color: rgba(0,0,0,0.9);
+}
+
+
+/*******************************
+*Carrusel Lienzo
+*******************************************************/
+
+.slide-container-master .slide-container{
+    width: 100%;
+    padding: 20px 0px;
+    display: flex;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+.slide-container-master .slide-container .slide-lienzo{
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+@media (max-width:600px){
+    .slide-container-master .slide-container{
+        width: 100%;
+        padding: 20px 0px;
+        display: flex;
+        overflow-x: scroll;
+        scroll-behavior: smooth;
+    }
+}

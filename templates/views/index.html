@@ -1,0 +1,281 @@
+{% include 'header.html' %}
+<link rel="stylesheet" href="../../static/css/main.css">
+<link rel="stylesheet" href="../../static/css/slidePrenda.css">
+<link rel="stylesheet" href="../../static/css/banners.css">
+<link rel="stylesheet" href="../../static/css/footer.css">
+
+<!-- NavBar -->
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #f5caaa;">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="../../static/Logo.png" height="50px" alt="">
+            &nbsp;
+            <span class="company-name">Company Name</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuOptions"
+            aria-controls="menuOptions" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menuOptions">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Option_x</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Option_x</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Option_x</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Carousel Part -->
+<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+            aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <a href="#">
+                <img src="../../static/pictures/Bann1.jpg" class="d-block w-100" id="img1" alt="...">
+            </a>
+        </div>
+        <div class="carousel-item">
+            <img src="../../static/pictures/Bann2.jpg" class="d-block w-100" id="img2" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="../../static/pictures/Bann3.jpg" class="d-block w-100" id="img3" alt="...">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<!-- Menu Description -->
+<div class="descrip-text mt-3 mb-3">
+    <div class="text-part">
+        <center>
+            <h1 class="title-descript">SOME TEXT</h1>
+        </center>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Eos, ex maiores sequi quisquam ipsum culpa unde in
+        minima quae quaerat optio eius facilis vero numquam?
+    </div>
+    <div class="img-part">
+        <img src="../../static/pictures/ropa.jpg" alt="#">
+    </div>
+</div>
+
+<!-- slides -->
+<div class="slide-container-master mb-3">
+    <div class="slide-titleIndicators">
+        <h3>Some Title</h3>
+        <div class="indicadores">
+            <button></button>
+            <button></button>
+        </div>
+    </div>
+    <div class="slide-container-g">
+        <button role="button" id="flecha-izquierda1" class="flecha-izquierda"><i class="fas fa-angle-left"></i>
+        </button>
+
+        <!-- contenedor de el slide -->
+        <div class="slide-container" id="cont-1">
+            <!-- Lienzo: aqui se dibujaran las tarjetas segun la siguente estructura -->
+            <div class="slide-lienzo">
+                {% for item in best %}
+                <div class="slide-card">
+                    <div class="slide-image-box">
+                        <img src="../../static/pictures/{{item[2]}}" alt="">
+                    </div>
+                    <div class="info-box">
+                        <p class="slide-card-price">
+                            ${{item[4]}}
+                        </p>
+                        <p class="slide-card-title">
+                            {{item[1]}}
+                        </p>
+                        <span class="new-label">
+                            Nuevo Modelo
+                        </span>
+                    </div>
+                </div>
+                {% endfor %}
+
+                <!-- Relleno provicional -->
+
+                <!-- End Container Lienzo -->
+            </div>
+            <!-- Fin Contenedor de Slide -->
+        </div>
+        <button role="button" id="flecha-derecha1" class="flecha-derecha"><i class="fas fa-angle-right"></i></button>
+    </div>
+</div>
+
+<!-- Slide2 -->
+<div class="slide-container-master mb-3">
+    <div class="slide-titleIndicators">
+        <h3>Some Title2</h3>
+        <div class="indicadores">
+            <button></button>
+            <button></button>
+        </div>
+    </div>
+    <div class="slide-container-g">
+        <button role="button" id="flecha-izquierda2" class="flecha-izquierda"><i class="fas fa-angle-left"></i>
+        </button>
+
+        <!-- contenedor de el slide -->
+        <div class="slide-container" id="cont-2">
+            <!-- Lienzo: aqui se dibujaran las tarjetas segun la siguente estructura -->
+            <div class="slide-lienzo">
+                {% for item in best %}
+                <div class="slide-card">
+                    <div class="slide-image-box">
+                        <img src="../../static/pictures/{{item[2]}}" alt="">
+                    </div>
+                    <div class="info-box">
+                        <p class="slide-card-price">
+                            ${{item[4]}}
+                        </p>
+                        <p class="slide-card-title">
+                            {{item[1]}}
+                        </p>
+                        <span class="new-label">
+                            Nuevo Modelo
+                        </span>
+                    </div>
+                </div>
+                {% endfor %}
+
+                <!-- Relleno provicional -->
+
+                <!-- End Container Lienzo -->
+            </div>
+            <!-- Fin Contenedor de Slide -->
+        </div>
+        <button role="button" id="flecha-derecha2" class="flecha-derecha"><i class="fas fa-angle-right"></i></button>
+    </div>
+</div>
+
+
+<!-- Banner -->
+<div class="banner mb-3">
+    <img src="../../static/pictures/Bannerx.png" alt="">
+</div>
+
+<!-- Slide2 -->
+<div class="slide-container-master mb-3">
+    <div class="slide-titleIndicators">
+        <h3>Some Title2</h3>
+        <div class="indicadores">
+            <button></button>
+            <button></button>
+        </div>
+    </div>
+    <div class="slide-container-g">
+        <button role="button" id="flecha-izquierda3" class="flecha-izquierda"><i class="fas fa-angle-left"></i>
+        </button>
+
+        <!-- contenedor de el slide -->
+        <div class="slide-container" id="cont-3">
+            <!-- Lienzo: aqui se dibujaran las tarjetas segun la siguente estructura -->
+            <div class="slide-lienzo">
+                {% for item in best %}
+                <div class="slide-card">
+                    <div class="slide-image-box">
+                        <img src="../../static/pictures/{{item[2]}}" alt="">
+                    </div>
+                    <div class="info-box">
+                        <p class="slide-card-price">
+                            ${{item[4]}}
+                        </p>
+                        <p class="slide-card-title">
+                            {{item[1]}}
+                        </p>
+                        <span class="new-label">
+                            Nuevo Modelo
+                        </span>
+                    </div>
+                </div>
+                {% endfor %}
+
+                <!-- Relleno provicional -->
+
+                <!-- End Container Lienzo -->
+            </div>
+            <!-- Fin Contenedor de Slide -->
+        </div>
+        <button role="button" id="flecha-derecha3" class="flecha-derecha"><i class="fas fa-angle-right"></i></button>
+    </div>
+</div>
+
+<div class="categories">
+    <h1>Categories here</h1>
+</div>
+
+
+<!-- Footer -->
+<footer>
+    <div class="container__footer">
+
+        <div class="box__footer">
+            <div class="logo">
+                <img src="../../static/Logo.png" alt="">
+            </div>
+            <div class="terms">
+                Lema de la empresa
+            </div>
+        </div>
+
+        <div class="box__footer">
+            <h2>Categories</h2>
+            <a href="#">Cat 1</a>
+            <a href="#">Cat 2</a>
+            <a href="#">Cat 3</a>
+            <a href="#">Cat 4</a>
+        </div>
+
+        <div class="box__footer">
+            <h2>Option 2</h2>
+            <a href="#">Acercda de</a>
+            <a href="#">Trabajos</a>
+            <a href="#">Procesos</a>
+            <a href="#">Servicios</a>
+        </div>
+
+        <div class="box__footer">
+            <h2>Redes Sociales</h2>
+            <a href="#"><i class="fab fa-facebook-square"></i> Facebook</a>
+            <a href="#"><i class="fab fa-twitter-square"></i> Twitter</a>
+            <a href="#"><i class="fab fa-linkedin"></i> Linkedin</a>
+            <a href="#"><i class="fab fa-instagram-square"></i> Instagram</a>
+        </div>
+    </div>
+
+    <div class="box__copyright">
+        <hr>
+        <p>Todos los derechos reservados © 2022 <b>Some Market</b></p>
+    </div>
+</footer>
+
+
+
+{% include 'footer.html' %}
+<script src="../../static/js/main.js"></script>
+<script src="../../static/js/slideprendas.js"></script>
