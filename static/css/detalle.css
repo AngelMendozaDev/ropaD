@@ -1,0 +1,77 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.cont-details{
+    margin-top: 20px;
+    margin: auto;
+    padding: 10px;
+    display: flex;
+}
+
+.img-box, .info-box{
+    width: 45%;
+    margin: auto;
+}
+
+.cant-box{
+    display: flex;
+}
+
+.down{
+    border-radius: 10px 0px 0px 10px;
+    cursor: pointer;
+}
+
+.plus{
+    border-radius: 0px 10px 10px 0px;
+    cursor: pointer;
+}
+
+.control-cant{
+    background-color: #fff;
+    border: 1px solid black;
+    margin: none;
+    padding: 0px;
+    height: 35px;
+    width: 35px;
+    text-align: center;
+}
+
+.slider{
+    width: 300px;
+    height: 300px;
+    margin: auto;
+    position: relative;
+    list-style: none;
+    padding: 0;
+    display: flex;
+
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.slider .indicador{
+    position: relative;
+    z-index: 99;
+    margin: 10px;
+}
+
+.slider img{
+    position: absolute;
+    top: 0px;
+    left:0px;
+    width: 100%;
+}
+
+.btn-buy{
+    display: block;
+    width: 80%;
+    margin: auto;
+    margin-top: 10px;
+    background-color: #f7c822;
+    border-radius: 10px;
+    height: 40px;
+}

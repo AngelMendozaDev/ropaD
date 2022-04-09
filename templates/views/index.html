@@ -1,39 +1,7 @@
 {% include 'header.html' %}
-<link rel="stylesheet" href="../../static/css/main.css">
 <link rel="stylesheet" href="../../static/css/slidePrenda.css">
 <link rel="stylesheet" href="../../static/css/banners.css">
 <link rel="stylesheet" href="../../static/css/footer.css">
-
-<!-- NavBar -->
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #f5caaa;">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-            <img src="../../static/Logo.png" height="50px" alt="">
-            &nbsp;
-            <span class="company-name">Company Name</span>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuOptions"
-            aria-controls="menuOptions" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="menuOptions">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Option_x</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Option_x</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Option_x</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
 
 <!-- Carousel Part -->
 <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -99,7 +67,7 @@
             <!-- Lienzo: aqui se dibujaran las tarjetas segun la siguente estructura -->
             <div class="slide-lienzo">
                 {% for item in best %}
-                <div class="slide-card">
+                <a class="slide-card" href="/detalle?atr={{item[0]}}">
                     <div class="slide-image-box">
                         <img src="../../static/pictures/{{item[2]}}" alt="">
                     </div>
@@ -114,7 +82,7 @@
                             Nuevo Modelo
                         </span>
                     </div>
-                </div>
+                </a>
                 {% endfor %}
 
                 <!-- Relleno provicional -->

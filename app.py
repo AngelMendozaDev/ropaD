@@ -2,6 +2,7 @@
 from ensurepip import bootstrap
 from flask import Flask
 from flask import render_template
+from flask import request
 from flaskext.mysql import MySQL
 from flask_bootstrap5 import Bootstrap
 
@@ -28,13 +29,16 @@ def index():
 
     return render_template("views/index.html", best = best)
 
+@app.route('/detalle', methods=['GET'])
+def details():
+    data = request.args.get('atr')
+    sql = "SELECT * FROM `producto`ORDER by codigo ASC LIMIT 15"
+    conn = mysql.connect()
+    cursor = conn.cursor()
+    cursor.execute(sql)
+    best = cursor.fetchall()
+    conn.commit()
+    return render_template('views/detalle.html', best=best)
+
 if __name__ == '__main__':
     app.run(debug=True)
-
-'''
-sql = ""
-conn = mysql.connect()
-cursor = conn.cursor()
-cursor.excute(sql)
-conn.commit()
-'''

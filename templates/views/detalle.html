@@ -1,0 +1,127 @@
+{% include 'header.html' %}
+<link rel="stylesheet" href="../../static/css/detalle.css">
+<link rel="stylesheet" href="../../static/css/slidePrenda.css">
+<div class="cont-details">
+    <div class="img-box">
+        <ul class="slider">
+            <li>
+                <input type="radio" id="sbutton1" name="sradio" class="indicador" checked>
+                <label for="sbutton1"></label>
+                <img src="../../static/pictures/z1.jpg" alt="">
+            </li>
+            <li>
+                <input type="radio" id="sbutton2" name="sradio" class="indicador">
+                <label for="sbutton2"></label>
+                <img src="../../static/pictures/z2.jpg" alt="">
+            </li>
+            <li>
+                <input type="radio" id="sbutton3" name="sradio" class="indicador">
+                <label for="sbutton3"></label>
+                <img src="../../static/pictures/z3.jpg" alt="">
+            </li>
+            <li>
+                <input type="radio" id="sbutton4" name="sradio" class="indicador">
+                <label for="sbutton4"></label>
+                <img src="../../static/pictures/z4.jpg" alt="">
+            </li>
+        </ul>
+    </div>
+    <div class="info-box">
+        <center>
+            <h1 class="prod-name">Some Title of Shoes</h1>
+        </center>
+        <h6 class="price">$000,000.00 MNX</h6>
+        <div class="cant-box">
+            <button class="control-cant down">
+                <i class="fa fa-minus" aria-hidden="true"></i>
+            </button>
+            <input type="text" class="item-cant control-cant" id="cant-box">
+            <button class="control-cant plus">
+                <i class="fa fa-plus" aria-hidden="true"></i>
+            </button>
+        </div>
+        <div class="tal-box">
+            <label for="">Talla:</label>
+            <select name="" id="" class="form-select">
+                <option value="" selected="true" disabled>Tallas Disponibles</option>
+                <option value="">21 cm</option>
+                <option value="">22 cm</option>
+                <option value="">23 cm</option>
+            </select>
+        </div>
+        <div class="accordion mt-3" id="descripBox">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Descripción
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                    data-bs-parent="#descripBox">
+                    <div class="accordion-body">
+                        <strong>New Prod</strong> Some text:
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi eaque, iusto sapiente mollitia
+                        temporibus quasi.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="btn-buy">
+            Comprar
+            &nbsp;
+            <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+        </button>
+    </div>
+</div>
+
+
+<!-- slides -->
+<div class="slide-container-master mb-3">
+    <div class="slide-titleIndicators">
+        <h3>Some Title</h3>
+        <div class="indicadores">
+            <button></button>
+            <button></button>
+        </div>
+    </div>
+    <div class="slide-container-g">
+        <button role="button" id="flecha-izquierda1" class="flecha-izquierda"><i class="fas fa-angle-left"></i>
+        </button>
+
+        <!-- contenedor de el slide -->
+        <div class="slide-container" id="cont-1">
+            <!-- Lienzo: aqui se dibujaran las tarjetas segun la siguente estructura -->
+            <div class="slide-lienzo">
+                {% for item in best %}
+                <a class="slide-card" href="/detalle?atr={{item[0]}}">
+                    <div class="slide-image-box">
+                        <img src="../../static/pictures/{{item[2]}}" alt="">
+                    </div>
+                    <div class="info-box">
+                        <p class="slide-card-price">
+                            ${{item[4]}}
+                        </p>
+                        <p class="slide-card-title">
+                            {{item[1]}}
+                        </p>
+                        <span class="new-label">
+                            Nuevo Modelo
+                        </span>
+                    </div>
+                </a>
+                {% endfor %}
+
+                <!-- Relleno provicional -->
+
+                <!-- End Container Lienzo -->
+            </div>
+            <!-- Fin Contenedor de Slide -->
+        </div>
+        <button role="button" id="flecha-derecha1" class="flecha-derecha"><i class="fas fa-angle-right"></i></button>
+    </div>
+</div>
+{% include 'footer.html' %}
+<script src="../../static/js/main.js"></script>
+<script src="../../static/js/slideprendas.js"></script>
